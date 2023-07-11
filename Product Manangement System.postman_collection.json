@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"prod2\",\r\n    \"productName\":\"milk\",\r\n    \"productDescription\":\"For tea and coffee\",\r\n    \"price\":24,\r\n    \"category\": \"FMCG\",\r\n    \"stockQuantity\":200\r\n}",
+					"raw": "{\r\n    \"id\": \"prod3\",\r\n    \"productName\":\"Biscuit\",\r\n    \"productDescription\":\"For tea and coffee dip it\",\r\n    \"price\":20,\r\n    \"category\": \"FMCG\",\r\n    \"stockQuantity\":2000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,11 +21,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/product",
+					"raw": "https://pms-north-ladder.vercel.app/product",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pms-north-ladder",
+						"vercel",
+						"app"
 					],
-					"port": "3000",
 					"path": [
 						"product"
 					]
@@ -40,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\r\n     \"price\":144\r\n}",
+					"raw": "{\r\n\r\n     \"price\":14422\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,14 +50,16 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/product/prod1",
+					"raw": "https://pms-north-ladder.vercel.app/product/prod3",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pms-north-ladder",
+						"vercel",
+						"app"
 					],
-					"port": "3000",
 					"path": [
 						"product",
-						"prod1"
+						"prod3"
 					]
 				}
 			},
@@ -67,14 +71,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/product/prod1",
+					"raw": "https://pms-north-ladder.vercel.app/product/prod3",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pms-north-ladder",
+						"vercel",
+						"app"
 					],
-					"port": "3000",
 					"path": [
 						"product",
-						"prod1"
+						"prod3"
 					]
 				}
 			},
@@ -86,14 +92,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/product/prod2",
+					"raw": "https://pms-north-ladder.vercel.app/product/prod3",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pms-north-ladder",
+						"vercel",
+						"app"
 					],
-					"port": "3000",
 					"path": [
 						"product",
-						"prod2"
+						"prod3"
 					]
 				}
 			},
@@ -105,11 +113,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/product/",
+					"raw": "https://pms-north-ladder.vercel.app/product/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pms-north-ladder",
+						"vercel",
+						"app"
 					],
-					"port": "3000",
 					"path": [
 						"product",
 						""
