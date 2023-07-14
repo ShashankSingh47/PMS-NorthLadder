@@ -2,23 +2,48 @@ const ProductModel = require('../models/product');
 
 //Add a new Product 
 const addNewProduct = async (req, res) => {
+    let errorvar =0 ;
+    let prodarr =[];
     try {
-        let product = {
-            id: req.body.id,
-            productName: req.body.productName,
-            productDescription: req.body.productDescription,
-            price: req.body.price,
-            stockQuantity: req.body.stockQuantity,
-            category: req.body.category,
-            createdAt: Date.now(),
-            updatedAt: Date.now()
+    let arr = []
+    if(!(Array.isArray(req.body))){
+        arr.push(req.body)
+        console.log("here",arr)
         }
-        let input = await ProductModel.create(product);
-        res.status(200).send(input);
-    } catch (err) {
-        res.status(500).send(err);
+    else{
+        arr = req.body
+        console.log(arr)
     }
-}
+   
+    for(let i=0; i<arr.length;i++){
+        if(!(req.body[i].productName) || !(req.body[i].productDescription) || !(req.body[i].price)  || !(req.body[i].stockQuantity) || !(req.body[i].category)  ){
+            errorvar = i+1
+            throw("Please Validate product at")
+        }else{
+        
+            let product = {
+                id: req.body[i].id,
+                productName: req.body[i].productName,
+                productDescription: req.body[i].productDescription,
+                price: req.body[i].price,
+                stockQuantity: req.body[i].stockQuantity,
+                category: req.body[i].category,
+                createdAt: Date.now(),
+                updatedAt: Date.now()
+            }
+           
+            prodarr.push(product)
+        }}
+            let input = await ProductModel.insertMany(prodarr);
+            res.status(200).send(input);
+            
+        } catch (err) {
+            if(errorvar){
+                res.status(400).send(err.message);
+            }
+            res.status(500).send(err.message);
+        }
+    }
 
 //Update an existing product
 const updateProduct = async (req, res) => {
